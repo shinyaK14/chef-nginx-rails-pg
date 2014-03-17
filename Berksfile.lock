@@ -66,9 +66,9 @@
       "ref": "87f58d428c160337c1581ed1130a1a53d94e5126"
     },
     "postgresql": {
-      "locked_version": "3.3.4",
-      "git": "git@github.com:opscode-cookbooks/postgresql.git",
-      "ref": "5800238828b443725442fe510ec4f5308ed9ce8b"
+      "locked_version": "0.13.1",
+      "git": "git@github.com:phlipper/chef-postgresql.git",
+      "ref": "89670ad805393f6b4bb495c32a03115a66f6fe61"
     },
     "java": {
       "locked_version": "1.21.2"
@@ -78,9 +78,6 @@
     },
     "apt": {
       "locked_version": "2.3.8"
-    },
-    "openssl": {
-      "locked_version": "1.1.0"
     }
   }
 }

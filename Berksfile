@@ -15,4 +15,4 @@ cookbook 'rails_gem_dependencies-tlq', git: 'git@github.com:TalkingQuickly/rails
 
 cookbook 'chef-nginx', git: 'git@github.com:dreamsweb/chef-nginx.git'
 cookbook 'rvm', git: 'https://github.com/fnichol/chef-rvm'
-cookbook 'postgresql', git: 'git@github.com:opscode-cookbooks/postgresql.git'
+cookbook 'postgresql', git: 'git@github.com:phlipper/chef-postgresql.git'
