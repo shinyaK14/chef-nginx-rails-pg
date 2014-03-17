@@ -10,10 +10,10 @@
       "git": "https://github.com/opscode-cookbooks/sudo.git",
       "ref": "84d6b4b758b107623a15312ef439c39e3e6d18a7"
     },
-    "basic-security-tlq": {
+    "chef-basic-security": {
       "locked_version": "0.0.1",
-      "git": "git@github.com:TalkingQuickly/basic_security-tlq.git",
-      "ref": "b40c3aa3a924903650dc05c9e0a53aaf46e5cc56"
+      "git": "git@github.com:dreamsweb/chef-basic_security.git",
+      "ref": "1ddfb9dbb8b0b54cf8271e0fc9c004fc657c2d35"
     },
     "look-and-feel-tlq": {
       "locked_version": "0.0.1",
@@ -30,10 +30,10 @@
       "git": "https://github.com/edelight/chef-solo-search",
       "ref": "63d6d016be9df48c3692dfd5b1e51820b2a3ac54"
     },
-    "newrelic": {
+    "chef-newrelic": {
       "locked_version": "0.0.1",
-      "git": "git@github.com:dreamsweb/newrelic.git",
-      "ref": "155972c2e329b1d4427ea321772e8ba9b9375adb"
+      "git": "git@github.com:dreamsweb/chef-newrelic.git",
+      "ref": "b1eb31e233a40e3be69660ad862a2c68f509049e"
     },
     "memcached-tlq": {
       "locked_version": "0.0.2",
@@ -71,7 +71,7 @@
       "ref": "5800238828b443725442fe510ec4f5308ed9ce8b"
     },
     "java": {
-      "locked_version": "1.19.2"
+      "locked_version": "1.21.2"
     },
     "chef_gem": {
       "locked_version": "0.1.0"

@@ -33,11 +33,11 @@
     // make sure deploy user has sudo rights
     "sudo",
     // lock down ssh, install firewall etc
-    "basic-security-tlq",
+    "chef-basic-security",
     // make the server look pretty
     "look-and-feel-tlq",
     // add newrelic server monitoring
-    "newrelic"
+    "chef-newrelic"
   ],
   "chef_type": "role",
   "override_attributes": {

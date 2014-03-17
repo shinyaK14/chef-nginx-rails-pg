@@ -2,11 +2,11 @@ site :opscode
 
 cookbook 'build-essential', git: 'https://github.com/opscode-cookbooks/build-essential'
 cookbook 'sudo', git: 'https://github.com/opscode-cookbooks/sudo.git'
-cookbook 'basic-security-tlq', git: 'git@github.com:TalkingQuickly/basic_security-tlq.git'
+cookbook 'chef-basic-security', git: 'git@github.com:dreamsweb/chef-basic_security.git'
 cookbook 'look-and-feel-tlq', git: 'git@github.com:TalkingQuickly/look_and_feel-tlq.git'
 cookbook 'users', git: 'https://github.com/opscode-cookbooks/users.git'
 cookbook 'chef-solo-search', git: 'https://github.com/edelight/chef-solo-search'
-cookbook 'newrelic', git: 'git@github.com:dreamsweb/newrelic.git'
+cookbook 'chef-newrelic', git: 'git@github.com:dreamsweb/chef-newrelic.git'
 
 cookbook 'memcached-tlq', git: 'git@github.com:TalkingQuickly/memcached-tlq.git'
 cookbook 'mongo-tlq', git: 'git@github.com:TalkingQuickly/mongo-tlq.git'
