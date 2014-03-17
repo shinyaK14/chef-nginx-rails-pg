@@ -6,7 +6,7 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "nginx-tlq"
+      "chef-nginx"
    ],
    "chef_type": "role",
    "override_attributes": {

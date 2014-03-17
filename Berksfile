@@ -13,6 +13,6 @@ cookbook 'mongo-tlq', git: 'git@github.com:TalkingQuickly/mongo-tlq.git'
 cookbook 'redis-tlq', git: 'git@github.com:TalkingQuickly/redis-tlq.git'
 cookbook 'rails_gem_dependencies-tlq', git: 'git@github.com:TalkingQuickly/rails_gem_dependencies-tlq.git'
 
-cookbook 'nginx-tlq', git: 'git@github.com:TalkingQuickly/nginx-tlq.git'
+cookbook 'chef-nginx', git: 'git@github.com:dreamsweb/chef-nginx.git'
 cookbook 'rvm', git: 'https://github.com/fnichol/chef-rvm'
 cookbook 'postgresql', git: 'git@github.com:opscode-cookbooks/postgresql.git'
