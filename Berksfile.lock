@@ -56,9 +56,9 @@
       "ref": "213f5d2ecf1be5d0778414164e84d29166443f44"
     },
     "chef-nginx": {
-      "locked_version": "0.0.3",
+      "locked_version": "0.0.4",
       "git": "git@github.com:dreamsweb/chef-nginx.git",
-      "ref": "a2b4cac7983f21be001265f3582c57a00a8c1cdc"
+      "ref": "358cbb8235b9e755383c5c903024c89341c3d27f"
     },
     "rvm": {
       "locked_version": "0.9.1",
