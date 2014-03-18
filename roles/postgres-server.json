@@ -1,13 +1,11 @@
 {
-   "name": "postgres-server",
-   "description": "Postgres database server",
-   "default_attributes": {
-
-   },
-   "json_class": "Chef::Role",
-   "run_list": [
-      "postgresql::server",
-      "postgresql::contrib"
-   ],
-   "chef_type": "role"
+  "name": "postgres-server",
+  "description": "Postgres database server",
+  "default_attributes": {},
+  "json_class": "Chef::Role",
+  "run_list": [
+    "postgresql::contrib",
+    "lwrp-postgres"
+  ],
+  "chef_type": "role"
 }

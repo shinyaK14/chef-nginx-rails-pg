@@ -1,3 +1,4 @@
 data_bags/users/*.json
+data_bags/pg_users/*.json
 cookbooks/**/*
 nodes/*.json
