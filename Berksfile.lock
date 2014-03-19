@@ -31,9 +31,9 @@
       "ref": "63d6d016be9df48c3692dfd5b1e51820b2a3ac54"
     },
     "chef-newrelic": {
-      "locked_version": "0.0.1",
+      "locked_version": "0.0.2",
       "git": "git@github.com:dreamsweb/chef-newrelic.git",
-      "ref": "b1eb31e233a40e3be69660ad862a2c68f509049e"
+      "ref": "cc88b406f0575e5f85c058e754f8eced24b23f6e"
     },
     "memcached-tlq": {
       "locked_version": "0.0.2",
