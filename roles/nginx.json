@@ -5,9 +5,7 @@
 
    },
    "json_class": "Chef::Role",
-   "run_list": [
-      "chef-nginx"
-   ],
+   "run_list": [ "chef-nginx", "chef-passenger" ],
    "chef_type": "role",
    "override_attributes": {
    }
