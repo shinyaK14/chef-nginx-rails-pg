@@ -16,3 +16,21 @@ data_bag('pg_users').each do |user|
     privileges superuser: user_conf["superuser"], createdb: user_conf["createdb"], login: user_conf["login"]
   end
 end
+
+data_bag('pg_databases').each do |db|
+  db_conf = data_bag_item('pg_databases', db)
+
+  # create a database
+  pg_database db do
+    owner db_conf['onwer']
+    encoding db_conf['encoding']
+    template db_conf['template']
+    locale db_conf['locale']
+  end
+
+  # install extensions to database
+  pg_database_extensions db do
+    languages "plpgsql"
+    extensions db_conf['extensions']
+  end
+end
