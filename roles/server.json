@@ -32,6 +32,7 @@
     "users::sysadmins",
     // make sure deploy user has sudo rights
     "sudo",
+    "locale-gen",
     // lock down ssh, install firewall etc
     "chef-basic-security",
     // make the server look pretty

@@ -7,6 +7,7 @@ cookbook 'look-and-feel-tlq', git: 'git@github.com:TalkingQuickly/look_and_feel-
 cookbook 'users', git: 'https://github.com/opscode-cookbooks/users.git'
 cookbook 'chef-solo-search', git: 'https://github.com/edelight/chef-solo-search'
 cookbook 'chef-newrelic', git: 'git@github.com:dreamsweb/chef-newrelic.git'
+cookbook 'locale-gen', git: 'git@github.com:danhart/locale-gen.git'
 
 cookbook 'memcached-tlq', git: 'git@github.com:TalkingQuickly/memcached-tlq.git'
 cookbook 'mongo-tlq', git: 'git@github.com:TalkingQuickly/mongo-tlq.git'

@@ -35,6 +35,11 @@
       "git": "git@github.com:dreamsweb/chef-newrelic.git",
       "ref": "cc88b406f0575e5f85c058e754f8eced24b23f6e"
     },
+    "locale-gen": {
+      "locked_version": "0.0.3",
+      "git": "git@github.com:danhart/locale-gen.git",
+      "ref": "1eb11640f9733f39c7cf1ec86b778eb1f8748463"
+    },
     "memcached-tlq": {
       "locked_version": "0.0.2",
       "git": "git@github.com:TalkingQuickly/memcached-tlq.git",
