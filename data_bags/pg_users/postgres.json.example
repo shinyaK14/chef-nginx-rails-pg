@@ -1,0 +1,14 @@
+{
+  "id": "postgres",
+  // You could copy the md5-hashed password from an existing postgres database
+  // if you have postgres access and want to use the same password:
+  //    select * from pg_shadow where usename='postgres';
+  // You can run this from any postgres database session to use a new password:
+  //    select 'md5'||md5('iloverandompasswordsbutthiswilldo'||'postgres');
+  // You can run this from a linux commandline:
+  //    echo -n 'iloverandompasswordsbutthiswilldo''postgres' | openssl md5 | sed -e 's/.* /md5/'
+  "secure_password": "secure_password",
+  "superuser": true,
+  "createdb": true,
+  "login": true
+}

@@ -1,6 +1,6 @@
 {
-  "id": "allosego",
-  "owner": "allosego",
+  "id": "dbname",
+  "owner": "dbownername",
   "encoding": "utf8",
   "locale": "en_US.UTF8",
   "template": "template0",
