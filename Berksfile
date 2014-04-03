@@ -1,4 +1,4 @@
-site :opscode
+source 'https://api.berkshelf.com'
 
 cookbook 'build-essential', git: 'https://github.com/opscode-cookbooks/build-essential'
 cookbook 'sudo', git: 'https://github.com/opscode-cookbooks/sudo.git'
@@ -17,5 +17,7 @@ cookbook 'rails_gem_dependencies-tlq', git: 'git@github.com:TalkingQuickly/rails
 cookbook 'chef-nginx', git: 'git@github.com:dreamsweb/chef-nginx.git'
 cookbook 'rvm', git: 'https://github.com/fnichol/chef-rvm'
 cookbook 'postgresql', git: 'git@github.com:phlipper/chef-postgresql.git'
+
+cookbook 'elasticsearch', git: 'git@github.com:dreamsweb/elasticsearch.git'
 
 cookbook 'openssl'
