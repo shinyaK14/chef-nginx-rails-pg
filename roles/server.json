@@ -36,7 +36,7 @@
     // lock down ssh, install firewall etc
     "chef-basic-security",
     // make the server look pretty
-    "look-and-feel-tlq",
+    "server-prerequisites",
     // add newrelic server monitoring
     "chef-newrelic"
   ],
