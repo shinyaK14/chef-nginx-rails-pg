@@ -41,7 +41,7 @@ DEPENDENCIES
     revision: dd58087e7399097a9b9df4e2e7235908aace2afd
   server-prerequisites
     git: git@github.com:dreamsweb/server-prerequisites.git
-    revision: 2f79506bd752eab93bc14a96530ce01d8f528b25
+    revision: f3389b83ac0b143d06a5dd82eff9b66e10ad60b6
   sudo
     git: https://github.com/opscode-cookbooks/sudo.git
     revision: d2902b4d6ea6fe2cf175d1921f0cb96b84e089bd
@@ -72,6 +72,6 @@ GRAPH
   rvm (0.9.2)
     chef_gem (>= 0.0.0)
     java (>= 0.0.0)
-  server-prerequisites (0.0.4)
+  server-prerequisites (0.0.6)
   sudo (2.5.3)
   users (1.7.1)
