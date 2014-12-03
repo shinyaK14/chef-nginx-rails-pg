@@ -29,4 +29,22 @@ Chef recipes for deploying Rails applications.
   bundle install
   ```
 
-Use examples in the data_bags directory
+* Create JSON config files
+
+  ./nodes/your.server.name.json
+
+  ./data_bags/users/username.json
+
+  Use examples in the data_bags and nodes directories
+
+* Prepare server
+
+  ```shell
+  knife solo prepare user@your.server.name
+  ```
+
+* Apply recipes
+
+  ```shell
+  knife solo cook user@your.server.name
+  ```

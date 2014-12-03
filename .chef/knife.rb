@@ -5,4 +5,6 @@ data_bag_path "data_bags"
 environment_path "environments"
 #encrypted_data_bag_secret "data_bag_key"
 
+ssl_verify_mode :verify_peer
+
 knife[:berkshelf_path] = "cookbooks"
