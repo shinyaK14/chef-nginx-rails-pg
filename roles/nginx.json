@@ -1,12 +1,9 @@
 {
-   "name": "nginx-server",
-   "description": "Nginx server",
-   "default_attributes": {
-
-   },
-   "json_class": "Chef::Role",
-   "run_list": [ "chef-nginx" ],
-   "chef_type": "role",
-   "override_attributes": {
-   }
+  "name": "nginx-server",
+  "description": "Nginx server",
+  "default_attributes": {},
+  "json_class": "Chef::Role",
+  "run_list": [ "chef-nginx" ],
+  "chef_type": "role",
+  "override_attributes": {}
 }
