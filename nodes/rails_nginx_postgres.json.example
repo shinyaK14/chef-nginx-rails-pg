@@ -21,7 +21,8 @@
       "server_name": "node.host.name",
       "app_name": "node",
       "run_user": "deploy",
-      "name": "node_prod"
+      "name": "node_prod",
+      "shared_unicorn_name": "shared/tmp/sockets"
     }
   },
   "rvm": {
