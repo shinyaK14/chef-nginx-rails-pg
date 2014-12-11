@@ -8,8 +8,7 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "redis-tlq",
-      "monit_configs-tlq::redis-server"
+      "redis-tlq"
    ],
    "chef_type": "role"
 }
