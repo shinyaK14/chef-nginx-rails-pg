@@ -10,7 +10,7 @@ DEPENDENCIES
     revision: df24608ad577e445283f8fd0b42157b1a148e4df
   chef-nginx
     git: git@github.com:dreamsweb/chef-nginx.git
-    revision: 8fc14816c81a3bbf68b52e292d2efb262a3552be
+    revision: 7e66f92b61da72dae227eccea2844478f4d26ad8
   chef-solo-search
     git: https://github.com/edelight/chef-solo-search
     revision: 4079db540b9b2b00fb383cba8c30f24c2c3bfbb4
@@ -55,7 +55,7 @@ GRAPH
   chef-basic-security (0.0.1)
   chef-newrelic (0.0.3)
     apt (>= 0.0.0)
-  chef-nginx (0.0.5)
+  chef-nginx (0.0.6)
   chef-solo-search (0.5.1)
   chef-sugar (2.4.1)
   chef_gem (0.1.0)
