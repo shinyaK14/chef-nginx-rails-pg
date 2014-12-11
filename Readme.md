@@ -56,3 +56,8 @@ Chef recipes for deploying Rails applications.
   ```shell
   knife solo cook user@your.server.name
   ```
+
+#### TODO
+  * add monit
+  * generate ssh key
+  * add ssh-keyscan for github/bitbucket (for mina)
