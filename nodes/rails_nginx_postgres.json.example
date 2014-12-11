@@ -16,7 +16,16 @@
     "license_key": "nr_key",
     "hostname": "node.host.name"
   },
+  "firewall_allow":[
+    {"port": "22", "ip": "any"},
+    {"port": "80", "ip": "any"},
+    {"port": "443", "ip": "any"}
+  ],
   "nginx":{
+    "run_user": "www-data",
+    "reconfigure": true,
+    "update_ufw_rules": true,
+    "use_stable_ppa": true,
     "upstream": {
       "server_name": "node.host.name",
       "app_name": "node",
@@ -29,13 +38,13 @@
     "user_installs": [
       {
         "user": "deploy",
-        "default_ruby": "2.1.1",
-        "rubies": ["2.1.1"]
+        "default_ruby": "2.1.5",
+        "rubies": ["2.1.5"]
       }
     ]
   },
   "postgresql": {
-    "version": "9.2",
+    "version": "9.3",
     "pg_hba": [
       { "type": "local", "db": "all", "user": "postgres", "addr": "",             "method": "peer" },
       { "type": "local", "db": "all", "user": "all",      "addr": "",             "method": "peer" },
@@ -47,6 +56,8 @@
     "role[server]",
     "role[nginx]",
     "role[postgres-server]",
-    "role[rails-app]"
+    "role[rails-app]",
+    "role[elastic-server]",
+    "role[redis-serve]"
   ]
 }

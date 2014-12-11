@@ -4,6 +4,14 @@
 
 Chef recipes for deploying Rails applications.
 
+### Includes
+* basic server provisioning
+* nginx server install
+* postgres server install
+* install of rvm, ruby & gems prerequisites
+* install of elasticsearch server
+* redis server install
+
 ### Getting Started
 
 * Install Ruby & gems:
