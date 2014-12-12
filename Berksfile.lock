@@ -26,6 +26,7 @@ DEPENDENCIES
   mongo-tlq
     git: git@github.com:TalkingQuickly/mongo-tlq.git
     revision: 11736b711346d8d23f7f520d48a56b480e707e94
+  nodejs
   openssl
   postgresql
     git: git@github.com:phlipper/chef-postgresql.git
@@ -50,7 +51,12 @@ DEPENDENCIES
     revision: 526a61b769778edd4e457a9c58571daee8433e75
 
 GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
   apt (2.6.0)
+  ark (0.9.0)
+    7-zip (>= 0.0.0)
+    windows (>= 0.0.0)
   build-essential (2.0.1)
   chef-basic-security (0.0.1)
   chef-newrelic (0.0.3)
@@ -59,12 +65,18 @@ GRAPH
   chef-solo-search (0.5.1)
   chef-sugar (2.4.1)
   chef_gem (0.1.0)
+  chef_handler (1.1.6)
   elasticsearch (0.0.1)
     java (>= 0.0.0)
   java (1.29.0)
   locale-gen (0.0.1)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
+  nodejs (2.2.0)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   openssl (2.0.0)
     chef-sugar (>= 0.0.0)
   postgresql (0.13.3)
@@ -77,3 +89,8 @@ GRAPH
   server-prerequisites (0.0.6)
   sudo (2.5.3)
   users (1.7.1)
+  windows (1.34.8)
+    chef_handler (>= 0.0.0)
+  yum (3.5.1)
+  yum-epel (0.5.3)
+    yum (~> 3.0)

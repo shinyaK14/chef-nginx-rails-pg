@@ -20,4 +20,6 @@ cookbook 'postgresql', git: 'git@github.com:phlipper/chef-postgresql.git'
 
 cookbook 'elasticsearch', git: 'git@github.com:dreamsweb/elasticsearch.git'
 
+cookbook 'nodejs'
+
 cookbook 'openssl'

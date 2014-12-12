@@ -1,23 +1,28 @@
 # Rails Nginx Postgres Server Template
 
+## :sparkles: v1.0.20 :sparkles:
+
 ## Overview
 
 Chef recipes for deploying Rails applications.
 
+:exclamation::exclamation::exclamation: This recipes doesn't work on OpenVZ VDS :exclamation::exclamation::exclamation:
+
 ### Includes
 * basic server provisioning
-* nginx server install
-* postgres server install
-* install of rvm, ruby & gems prerequisites
-* install of elasticsearch server
-* redis server install
+* nginx server
+* postgres server
+* rvm, ruby & gems prerequisites
+* elasticsearch server
+* redis server
+* nodejs server
 
 ### Getting Started
 
 * Install Ruby & gems:
 
   Using rbenv:
- [`rbenv`](https://github.com/sstephenson/rbenv#basic-github-checkout), [`ruby-build`](https://github.com/sstephenson/ruby-build#installing-as-an-rbenv-plugin-recommended):
+  [`rbenv`](https://github.com/sstephenson/rbenv#basic-github-checkout), [`ruby-build`](https://github.com/sstephenson/ruby-build#installing-as-an-rbenv-plugin-recommended):
 
   ```shell
   rbenv install $(cat .ruby-version)
