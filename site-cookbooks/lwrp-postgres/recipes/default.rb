@@ -8,6 +8,8 @@
 include_recipe 'postgresql'
 include_recipe 'postgresql::server'
 include_recipe 'postgresql::client'
+include_recipe 'postgresql::contrib'
+include_recipe 'postgresql::postgis'
 include_recipe 'postgresql::server_dev'
 
 data_bag('pg_users').each do |user|

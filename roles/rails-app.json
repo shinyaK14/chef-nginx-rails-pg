@@ -19,6 +19,5 @@
     "rvm::user"
   ],
   "chef_type": "role",
-  "override_attributes": {
-  }
+  "override_attributes": {}
 }

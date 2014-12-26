@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-server",
+  "description": "NodeJS Server",
+  "default_attributes": {
+    "nodejs": {
+      "version": "0.10.33",
+      "install_method": "package"
+    }
+  },
+  "json_class": "Chef::Role",
+  "run_list": [ "nodejs" ],
+  "chef_type": "role",
+  "override_attributes": {}
+}
