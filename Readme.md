@@ -1,6 +1,6 @@
 # Rails Nginx Postgres Server Template
 
-## :sparkles: v1.0.20 :sparkles:
+## :sparkles: v1.0.21 :sparkles:
 
 ## Overview
 
@@ -63,6 +63,8 @@ Chef recipes for deploying Rails applications.
   ```
 
 #### TODO
+  * add hostname
+  * add swap
   * add monit
   * generate ssh key
   * add ssh-keyscan for github/bitbucket (for mina)

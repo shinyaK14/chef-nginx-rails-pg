@@ -29,17 +29,19 @@
     "sites": [
       {
         "template": "unicorn",
-        "run_user": "deploy",
-        "app_name": "node",
         "server_name": "node.host.name",
+        "app_name": "node",
+        "run_user": "deploy",
         "upstream_name": "node_prod",
         "shared_unicorn_name": "shared/tmp/sockets"
       },
       {
         "template": "static",
-        "run_user": "deploy",
+        "server_name": "node.host.name",
         "app_name": "node",
-        "server_name": "node.host.name"
+        "run_user": "deploy",
+        "upstream_name": "",
+        "shared_unicorn_name": ""
       }
     ]
   },
@@ -47,13 +49,13 @@
     "user_installs": [
       {
         "user": "deploy",
-        "default_ruby": "2.1.5",
-        "rubies": ["2.1.5"]
+        "default_ruby": "2.2.1",
+        "rubies": ["2.2.1"]
       }
     ]
   },
   "postgresql": {
-    "version": "9.3",
+    "version": "9.4",
     "pg_hba": [
       { "type": "local", "db": "all", "user": "postgres", "addr": "",             "method": "peer" },
       { "type": "local", "db": "all", "user": "all",      "addr": "",             "method": "peer" },
@@ -67,6 +69,6 @@
     "role[postgres-server]",
     "role[rails-app]",
     "role[elastic-server]",
-    "role[redis-serve]"
+    "role[redis-server]"
   ]
 }
