@@ -26,13 +26,22 @@
     "reconfigure": true,
     "update_ufw_rules": true,
     "use_stable_ppa": true,
-    "upstream": {
-      "server_name": "node.host.name",
-      "app_name": "node",
-      "run_user": "deploy",
-      "name": "node_prod",
-      "shared_unicorn_name": "shared/tmp/sockets"
-    }
+    "sites": [
+      {
+        "template": "unicorn",
+        "run_user": "deploy",
+        "app_name": "node",
+        "server_name": "node.host.name",
+        "upstream_name": "node_prod",
+        "shared_unicorn_name": "shared/tmp/sockets"
+      },
+      {
+        "template": "static",
+        "run_user": "deploy",
+        "app_name": "node",
+        "server_name": "node.host.name"
+      }
+    ]
   },
   "rvm": {
     "user_installs": [
