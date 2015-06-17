@@ -162,3 +162,6 @@ DEPENDENCIES
   chef
   chef-zero
   knife-solo
+
+BUNDLED WITH
+   1.10.2

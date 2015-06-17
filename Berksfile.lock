@@ -42,7 +42,7 @@ DEPENDENCIES
     revision: dd58087e7399097a9b9df4e2e7235908aace2afd
   server-prerequisites
     git: git@github.com:dreamsweb/server-prerequisites.git
-    revision: f3389b83ac0b143d06a5dd82eff9b66e10ad60b6
+    revision: 1df326402630bafa797f7da8cfded9600832d928
   sudo
     git: https://github.com/opscode-cookbooks/sudo.git
     revision: d2902b4d6ea6fe2cf175d1921f0cb96b84e089bd
