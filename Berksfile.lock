@@ -11,6 +11,9 @@ DEPENDENCIES
   chef-nginx
     git: git@github.com:dreamsweb/chef-nginx.git
     revision: 2eb8b9134ef84ffa33fecbf3062d181c1b797c4d
+  chef-redis
+    git: git@github.com:dreamsweb/chef-redis.git
+    revision: 8a643c09a043ae1edde95e612f3be3d90e9ed8a4
   chef-solo-search
     git: https://github.com/edelight/chef-solo-search
     revision: 4079db540b9b2b00fb383cba8c30f24c2c3bfbb4
@@ -34,15 +37,12 @@ DEPENDENCIES
   rails_gem_dependencies-tlq
     git: git@github.com:TalkingQuickly/rails_gem_dependencies-tlq.git
     revision: 213f5d2ecf1be5d0778414164e84d29166443f44
-  redis-tlq
-    git: git@github.com:TalkingQuickly/redis-tlq.git
-    revision: 0fd9ee3dcc7bd01f37e2e057b146595a7849e6aa
   rvm
     git: https://github.com/fnichol/chef-rvm
     revision: dd58087e7399097a9b9df4e2e7235908aace2afd
   server-prerequisites
     git: git@github.com:dreamsweb/server-prerequisites.git
-    revision: 1df326402630bafa797f7da8cfded9600832d928
+    revision: 954e97194572e2a1a2b3bf07e36369b269af903e
   sudo
     git: https://github.com/opscode-cookbooks/sudo.git
     revision: d2902b4d6ea6fe2cf175d1921f0cb96b84e089bd
@@ -62,6 +62,7 @@ GRAPH
   chef-newrelic (0.0.3)
     apt (>= 0.0.0)
   chef-nginx (0.0.8)
+  chef-redis (0.0.7)
   chef-solo-search (0.5.1)
   chef-sugar (2.4.1)
   chef_gem (0.1.0)
@@ -82,7 +83,6 @@ GRAPH
   postgresql (0.13.3)
     apt (>= 1.9.0)
   rails_gem_dependencies-tlq (0.0.1)
-  redis-tlq (0.0.6)
   rvm (0.9.2)
     chef_gem (>= 0.0.0)
     java (>= 0.0.0)

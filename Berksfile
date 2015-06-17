@@ -11,7 +11,7 @@ cookbook 'locale-gen', git: 'git@github.com:danhart/locale-gen.git'
 
 cookbook 'memcached-tlq', git: 'git@github.com:TalkingQuickly/memcached-tlq.git'
 cookbook 'mongo-tlq', git: 'git@github.com:TalkingQuickly/mongo-tlq.git'
-cookbook 'redis-tlq', git: 'git@github.com:TalkingQuickly/redis-tlq.git'
+cookbook 'chef-redis', git: 'git@github.com:dreamsweb/chef-redis.git'
 cookbook 'rails_gem_dependencies-tlq', git: 'git@github.com:TalkingQuickly/rails_gem_dependencies-tlq.git'
 
 cookbook 'chef-nginx', git: 'git@github.com:dreamsweb/chef-nginx.git'

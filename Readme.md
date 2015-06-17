@@ -1,6 +1,6 @@
 # Rails Nginx Postgres Server Template
 
-## :sparkles: v1.0.22 :sparkles:
+## :sparkles: v1.0.23 :sparkles:
 
 ## Overview
 

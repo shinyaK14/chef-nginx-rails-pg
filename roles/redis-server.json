@@ -8,7 +8,7 @@
    },
    "json_class": "Chef::Role",
    "run_list": [
-      "redis-tlq"
+      "chef-redis"
    ],
    "chef_type": "role"
 }
