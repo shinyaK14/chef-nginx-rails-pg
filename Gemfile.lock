@@ -97,7 +97,7 @@ GEM
     net-ssh-multi (1.2.0)
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
-    nio4r (1.0.1)
+    nio4r (1.1.1)
     octokit (3.6.1)
       sawyer (~> 0.6.0, >= 0.5.3)
     ohai (7.4.0)
@@ -164,4 +164,4 @@ DEPENDENCIES
   knife-solo
 
 BUNDLED WITH
-   1.10.2
+   1.10.6
