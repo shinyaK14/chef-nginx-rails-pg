@@ -6,8 +6,8 @@
       "user_installs": [
         {
           "user": "deployer",
-          "default_ruby":  "2.1.5",
-          "rubies" : ["2.1.5"]
+          "default_ruby":  "2.3.0",
+          "rubies" : ["2.3.0"]
         }
       ]
     }

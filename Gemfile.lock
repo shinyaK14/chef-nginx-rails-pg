@@ -74,7 +74,7 @@ GEM
     highline (1.6.21)
     hitimes (1.2.2)
     ipaddress (0.8.0)
-    json (1.8.1)
+    json (1.8.3)
     knife-solo (0.4.2)
       chef (>= 10.12)
       erubis (~> 2.7.0)
@@ -164,4 +164,4 @@ DEPENDENCIES
   knife-solo
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
