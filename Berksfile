@@ -4,7 +4,7 @@ cookbook 'build-essential', git: 'https://github.com/opscode-cookbooks/build-ess
 cookbook 'sudo', git: 'https://github.com/opscode-cookbooks/sudo.git'
 cookbook 'chef-basic-security', git: 'git@github.com:dreamsweb/chef-basic_security.git'
 cookbook 'server-prerequisites', git: 'git@github.com:dreamsweb/server-prerequisites.git'
-cookbook 'users', git: 'https://github.com/opscode-cookbooks/users.git'
+cookbook 'users', '~> 2.0.3'
 cookbook 'chef-solo-search', git: 'https://github.com/edelight/chef-solo-search'
 cookbook 'chef-newrelic', git: 'git@github.com:dreamsweb/chef-newrelic.git'
 cookbook 'locale-gen', git: 'git@github.com:danhart/locale-gen.git'
