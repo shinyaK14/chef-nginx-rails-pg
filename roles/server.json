@@ -29,6 +29,8 @@
     "chef-solo-search",
     // setup standard sys admin users
     "users::sysadmins",
+    // setup deploy users
+    "deploy-users",
     // make sure deploy user has sudo rights
     "sudo",
     "locale-gen",

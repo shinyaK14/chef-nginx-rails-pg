@@ -1,4 +1,5 @@
 data_bags/users/*.json
+data_bags/deploy_users/*.json
 data_bags/pg_users/*.json
 data_bags/pg_databases/*.json
 cookbooks/**/*
