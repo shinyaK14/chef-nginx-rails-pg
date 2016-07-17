@@ -1,0 +1,1 @@
+default['lsb']['codename'] = 'trusty'

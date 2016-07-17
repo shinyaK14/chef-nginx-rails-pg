@@ -1,0 +1,9 @@
+{
+  "name": "nginx-passenger",
+  "description": "Passenger modules for Nginx",
+  "default_attributes": {},
+  "json_class": "Chef::Role",
+  "run_list": [ "chef-nginx-passenger" ],
+  "chef_type": "role",
+  "override_attributes": {}
+}

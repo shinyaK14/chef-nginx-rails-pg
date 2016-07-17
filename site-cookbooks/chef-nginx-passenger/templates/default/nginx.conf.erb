@@ -40,12 +40,6 @@ http {
   error_log /var/log/nginx/error.log;
 
   ##
-  # Passenger Settings
-  ##
-  # passenger_root /home/apps/.rvm/gems/ruby-2.1.1/gems/passenger-4.0.40;
-  # passenger_ruby /home/apps/.rvm/gems/ruby-2.1.1/wrappers/ruby;
-
-  ##
   # Gzip Settings
   ##
 
@@ -58,6 +52,11 @@ http {
   # gzip_buffers 16 8k;
   # gzip_http_version 1.1;
   # gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+  ##
+  # Passenger Settings
+  ##
+  # include /etc/nginx/passenger.conf;
 
   ##
   # Virtual Host Configs
