@@ -15,7 +15,8 @@ cookbook 'chef-redis', git: 'git@github.com:dreamsweb/chef-redis.git'
 cookbook 'rails_gem_dependencies', git: 'git@github.com:dreamsweb/rails_gem_dependencies.git'
 
 cookbook 'chef-nginx', git: 'git@github.com:dreamsweb/chef-nginx.git'
-cookbook 'rvm', git: 'https://github.com/fnichol/chef-rvm'
+cookbook 'ruby_build', '~> 0.8.0'
+cookbook 'ruby_rbenv', '~> 1.0.1'
 cookbook 'postgresql', git: 'git@github.com:phlipper/chef-postgresql.git'
 
 cookbook 'elasticsearch', git: 'git@github.com:dreamsweb/elasticsearch.git'

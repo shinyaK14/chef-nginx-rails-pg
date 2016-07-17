@@ -15,8 +15,9 @@
 
   "json_class": "Chef::Role",
   "run_list": [
-    "rails_gem_dependencies-tlq",
-    "rvm::user"
+    "rails_gem_dependencies",
+    "ruby_build",
+    "ruby_rbenv::user"
   ],
   "chef_type": "role",
   "override_attributes": {}
