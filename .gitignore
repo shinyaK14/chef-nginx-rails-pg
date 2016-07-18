@@ -4,3 +4,4 @@ data_bags/pg_users/*.json
 data_bags/pg_databases/*.json
 cookbooks/**/*
 nodes/*.json
+.DS_Store
