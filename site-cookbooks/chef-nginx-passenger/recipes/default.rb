@@ -6,32 +6,6 @@
 #
 include_recipe 'apt'
 
-# bash 'Add the Fusion Passenger apt repository' do
-#   user 'root'
-#   code <<-EOC
-#     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
-#     apt-get install apt-transport-https ca-certificates
-
-#     echo deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main >> /etc/apt/sources.list.d/passenger.list
-
-#     chown root: /etc/apt/sources.list.d/passenger.list
-#     chmod 600 /etc/apt/sources.list.d/passenger.list
-#     apt-get update
-#   EOC
-# end
-
-# =======
-# sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
-# sudo apt-get install -y apt-transport-https ca-certificates
-#
-# # Add our APT repository
-# sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
-# sudo apt-get update
-#
-# # Install Passenger + Nginx
-# sudo apt-get install -y nginx-extras passenger
-# =======
-
 prerequisites = %w(apt-transport-https ca-certificates)
 prerequisites.each { |name| package name }
 
@@ -47,15 +21,55 @@ end
 passenger_packages = %w(nginx-extras passenger)
 passenger_packages.each { |name| package name }
 
-template "/etc/nginx/nginx.conf" do
-  owner "root"
-  group "root"
-  mode "0644"
-  source "nginx.conf.erb"
+if node[:nginx][:reconfigure]
+  template "/etc/nginx/nginx.conf" do
+    owner "root"
+    group "root"
+    mode "0644"
+    source "nginx.conf.erb"
+  end
 end
 
-service "nginx" do
-  # supports :status => true, :restart => true, :reload => true
-  # action [ :enable, :restart ]
-  action :restart
+# write site configs from templates
+all_sites do |site|
+  template "/etc/nginx/sites-available/#{site[:server_name]}" do
+    owner "#{ site[:app_user] }"
+    group "#{ site[:app_user] }"
+    mode "0644"
+    source "ruby.erb"
+
+    variables({
+      server_name: site[:server_name],
+      app_user: site[:app_user],
+      app_name: site[:app_name],
+      app_env: site[:app_env] || "production",
+      shared_folder: site[:app_shared_folder_name] || "shared",
+      debug_passenger: site[:debug_passenger] || node[:passenger][:debug_passenger]
+      max_pool_size: site[:max_pool_size] || node[:passenger][:max_pool_size]
+      min_instances: site[:min_instances] || node[:passenger][:min_instances]
+      idle_time: site[:idle_time] || node[:passenger][:idle_time]
+      app_log_level: site[:app_log_level] || node[:passenger][:app_log_level]
+    })
+
+    notifies :run, "execute[restart-nginx]", :immediately
+  end
+
+  bash "symlink available site if not exist" do
+    user "root"
+    code "ln -s /etc/nginx/sites-available/#{site[:server_name]} /etc/nginx/sites-enabled/#{site[:server_name]}"
+    not_if { File.exist?("/etc/nginx/sites-enabled/#{site[:server_name]}") }
+  end
+end
+
+# open web ports
+if node[:nginx][:update_ufw_rules]
+  bash "allowing nginx traffic through firewall" do
+    user "root"
+    code "ufw allow 80 && ufw allow 443"
+  end
+end
+
+execute "restart-nginx" do
+  command "/etc/init.d/nginx restart"
+  action :nothing
 end

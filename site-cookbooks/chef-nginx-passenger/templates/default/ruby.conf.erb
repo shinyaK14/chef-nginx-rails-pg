@@ -1,0 +1,38 @@
+# www redirect
+server {
+  listen 80;
+  server_name www.<%= @server_name %>;
+  return 301 http://<%=@server_name %>$request_uri;
+}
+
+server {
+  listen 80;
+  client_max_body_size 1G;
+  server_name <%= @server_name %>;
+
+  root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+
+  keepalive_timeout 5;
+
+  access_log  /var/log/nginx/<%= @server_name %>.access.log;
+  error_log  /var/log/nginx/<%= @server_name %>.error.log;
+
+  # passenger conf
+  passenger_enabled on;
+  passenger_ruby /home/<%= @app_user %>/.rbenv/shims/ruby;
+  passenger_app_env <%= @app_env %>;
+  passenger_app_type rack;
+  passenger_show_version_in_header on;
+  passenger_friendly_error_pages <%= @debug_passenger %>;
+  passenger_max_pool_size <%= @max_pool_size %>; #default 6
+  passenger_min_instances <%= @min_instances %>; #default 1
+  passenger_pool_idle_time <%= @idle_time %>; #default 300
+  # passenger_memory_limit 0;
+  passenger_log_level <%= @app_log_level %>; #default 3
+  passenger_log_file /home/<%= @app_user %>/<%= @app_name %>/<%= @shared_folder %>/passenger.log;
+
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+  }
+}

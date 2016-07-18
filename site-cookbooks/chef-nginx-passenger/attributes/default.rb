@@ -1,1 +1,9 @@
 default['lsb']['codename'] = 'trusty'
+default['nginx']['worker_processes'] = 4
+default['nginx']['run_user'] = 'www-data'
+default['nginx']['passenger_enabled'] = true
+default['passenger']['debug_passenger'] = 'off'
+default['passenger']['max_pool_size'] = 6
+default['passenger']['min_instances'] = 1
+default['passenger']['idle_time'] = 300
+default['passenger']['app_log_level'] = 3
