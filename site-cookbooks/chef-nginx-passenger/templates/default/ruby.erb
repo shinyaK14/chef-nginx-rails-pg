@@ -25,7 +25,6 @@ server {
   passenger_app_type rack;
   passenger_friendly_error_pages <%= @debug_passenger %>;
 
-  passenger_max_instances <%= @max_instances %>; #default 1
   passenger_min_instances <%= @min_instances %>; #default 1
   #passenger_memory_limit 0;
 

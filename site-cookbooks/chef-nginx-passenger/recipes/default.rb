@@ -44,7 +44,6 @@ all_sites do |site|
       app_name: site[:app_name],
       app_env: site[:app_env] || "production",
       debug_passenger: site[:debug_passenger] || node[:passenger][:debug_passenger],
-      max_instances: site[:max_instances] || node[:passenger][:max_instances],
       min_instances: site[:min_instances] || node[:passenger][:min_instances]
     })
 

@@ -5,6 +5,5 @@ default['nginx']['passenger_enabled'] = true
 default['passenger']['debug_passenger'] = 'off'
 default['passenger']['max_pool_size'] = 6
 default['passenger']['idle_time'] = 300
-default['passenger']['max_instances'] = 6
 default['passenger']['min_instances'] = 1
 default['passenger']['log_level'] = 3
