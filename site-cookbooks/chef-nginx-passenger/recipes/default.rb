@@ -43,12 +43,9 @@ all_sites do |site|
       app_user: site[:app_user],
       app_name: site[:app_name],
       app_env: site[:app_env] || "production",
-      shared_folder: site[:app_shared_folder_name] || "shared",
       debug_passenger: site[:debug_passenger] || node[:passenger][:debug_passenger],
-      max_pool_size: site[:max_pool_size] || node[:passenger][:max_pool_size],
-      min_instances: site[:min_instances] || node[:passenger][:min_instances],
-      idle_time: site[:idle_time] || node[:passenger][:idle_time],
-      app_log_level: site[:app_log_level] || node[:passenger][:app_log_level]
+      max_instances: site[:max_instances] || node[:passenger][:max_instances],
+      min_instances: site[:min_instances] || node[:passenger][:min_instances]
     })
 
     notifies :run, "execute[restart-nginx]", :immediately

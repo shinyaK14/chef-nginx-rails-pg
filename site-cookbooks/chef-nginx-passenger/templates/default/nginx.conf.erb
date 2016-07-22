@@ -66,6 +66,11 @@ http {
   # Passenger Settings
   ##
   include /etc/nginx/passenger.conf;
+
+  passenger_show_version_in_header off;
+  passenger_max_pool_size <%= @node[:passenger][:max_pool_size] %>;
+  passenger_pool_idle_time <%= @node[:passenger][:idle_time] %>;
+  passenger_log_level <%= @node[:passenger][:log_level] %>;
   <% end %>
 
   ##
