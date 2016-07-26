@@ -1,6 +1,6 @@
 # Rails Nginx Postgres Server Template
 
-## :sparkles: v1.0.26 :sparkles:
+## :sparkles: v1.0.27 :sparkles:
 
 ## Overview
 
@@ -12,7 +12,7 @@ Chef recipes for deploying Rails applications.
 * basic server provisioning
 * nginx server
 * postgres server
-* rvm, ruby & gems prerequisites
+* rvm/rbenv ruby & gems prerequisites
 * elasticsearch server
 * redis server
 * nodejs server
