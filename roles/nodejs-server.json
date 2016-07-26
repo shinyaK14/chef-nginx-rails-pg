@@ -3,12 +3,11 @@
   "description": "NodeJS Server",
   "default_attributes": {
     "nodejs": {
-      "version": "0.10.33",
-      "install_method": "package"
+      "version": "4"
     }
   },
   "json_class": "Chef::Role",
-  "run_list": [ "nodejs" ],
+  "run_list": [ "nodejs-lts" ],
   "chef_type": "role",
   "override_attributes": {}
 }
