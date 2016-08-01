@@ -8,3 +8,4 @@ environment_path "environments"
 ssl_verify_mode :verify_peer
 
 knife[:berkshelf_path] = "cookbooks"
+knife[:aws_credential_file] = File.join(ENV['HOME'], "/.aws/credentials")
