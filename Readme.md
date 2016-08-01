@@ -1,6 +1,6 @@
 # Rails Nginx Postgres Server Template
 
-## :sparkles: v1.0.27 :sparkles:
+## :sparkles: v1.0.28 :sparkles:
 
 ## Overview
 
@@ -16,6 +16,7 @@ Chef recipes for deploying Rails applications.
 * elasticsearch server
 * redis server
 * nodejs server
+* knife-ec2 gem for AWS EC2 creation
 
 ### Getting Started
 
@@ -61,6 +62,26 @@ Chef recipes for deploying Rails applications.
   ```shell
   knife solo cook user@your.server.name
   ```
+
+* Creating EC2 instances with knife
+
+  ```shell
+  knife ec2 server create --image=ami-26c43149 --flavor=t2.nano --ssh-key=ssh_key_name --identity-file=~/.ssh/ssh_key.pem --ssh-user ubuntu --region=eu-central-1 --availability-zone=eu-central-1a --groups=ssh,web --tags Name=Test
+  ```
+
+  -I --image is the AMI ID
+
+  -f --flavor is the Amazon EC2 instance type
+
+  -S --ssh-key is the name you gave to the SSH key pair generated in the AWS management console
+
+  -i --identity-file points to the private key file of that SSH key pair as downloaded when the key pair was created in the AWS management console
+
+  --ssh-user the official Ubuntu EC2 AMIs use ubuntu as the default user
+
+  --region eu-west-1 If you want your instances to be deployed in any specific Amazon AWS region, add this parameter and the desired region
+
+  -Z --availability-zone eu-west-1a is the availability zone within your region
 
 #### TODO
   * add hostname
