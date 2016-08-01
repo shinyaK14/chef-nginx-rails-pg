@@ -1,0 +1,1 @@
+default['openvpn']['reconfigure'] = false
