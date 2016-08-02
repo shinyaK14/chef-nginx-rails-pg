@@ -8,4 +8,5 @@ recipe "openvpn-aws", "Installs/Configures OpenVPN server"
 
 supports 'ubuntu', '>= 14.04'
 
-depends "apt"
+depends 'apt'
+# depends 'sysctl'
