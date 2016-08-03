@@ -44,6 +44,7 @@ DEPENDENCIES
   sudo
     git: https://github.com/opscode-cookbooks/sudo.git
     revision: d2902b4d6ea6fe2cf175d1921f0cb96b84e089bd
+  sysctl
   users (~> 2.0.3)
 
 GRAPH
@@ -56,12 +57,15 @@ GRAPH
   chef-redis (0.0.7)
   chef-solo-search (0.5.1)
   chef-sugar (2.4.1)
+  compat_resource (12.10.7)
   elasticsearch (0.0.1)
     java (>= 0.0.0)
   java (1.29.0)
   locale-gen (0.0.1)
   memcached-tlq (0.0.2)
   mongo-tlq (0.0.3)
+  ohai (4.2.0)
+    compat_resource (>= 12.10)
   openssl (2.0.0)
     chef-sugar (>= 0.0.0)
   postgresql (0.13.3)
@@ -74,4 +78,6 @@ GRAPH
     ruby_build (>= 0.0.0)
   server-prerequisites (0.0.6)
   sudo (2.5.3)
+  sysctl (0.8.0)
+    ohai (~> 4.0)
   users (2.0.3)

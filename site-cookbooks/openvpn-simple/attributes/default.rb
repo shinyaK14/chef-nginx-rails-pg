@@ -1,5 +1,6 @@
 default['openvpn']['reconfigure'] = false
 default['openvpn']['reconfigure_vars'] = false
+default['openvpn']['reconfigure_fw'] = false
 
 default['openvpn']['key']['easy_rsa'] = "/etc/openvpn/easy-rsa" #'EASY_RSA'
 default['openvpn']['key']['openssl'] = "openssl" #'OPENSSL'
