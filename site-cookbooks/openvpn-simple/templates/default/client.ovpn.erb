@@ -1,0 +1,39 @@
+##############################################
+# Sample client-side OpenVPN 2.0 config file #
+# for connecting to multi-client server.     #
+##############################################
+
+client
+
+dev tun
+
+proto udp
+
+remote <%= @node[:openvpn][:server_address] %> 1194
+
+resolv-retry infinite
+
+nobind
+
+user nobody
+group nogroup
+
+persist-key
+persist-tun
+
+ns-cert-type server
+comp-lzo
+
+verb 3
+
+<ca>
+(insert ca.crt here: /etc/openvpn/ca.crt)
+</ca>
+<cert>
+(insert client1.crt here: /etc/openvpn/easy-rsa/keys/client.crt)
+<%= "#{@node['openvpn']['key']['key_dir']}/#{@username}.crt" %>
+</cert>
+<key>
+(insert client1.key here: /etc/openvpn/easy-rsa/keys/client.key)
+<%= "#{@node['openvpn']['key']['key_dir']}/#{@username}.key" %>
+</key>

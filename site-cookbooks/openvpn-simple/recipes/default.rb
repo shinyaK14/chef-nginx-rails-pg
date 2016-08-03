@@ -6,7 +6,7 @@
 include_recipe 'openvpn-simple::firewall'
 include_recipe 'openvpn-simple::easy_rsa'
 include_recipe 'openvpn-simple::server'
-# include_recipe 'openvpn-simple::clients'
+include_recipe 'openvpn-simple::clients'
 
 service 'openvpn' do
   action [:enable, :restart]
