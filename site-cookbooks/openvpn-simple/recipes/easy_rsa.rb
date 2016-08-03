@@ -5,6 +5,12 @@
 
 package 'easy-rsa'
 
+directory '/etc/openvpn' do
+  owner 'root'
+  group 'root'
+  mode  '0644'
+end
+
 execute "Configure and Build the Certificate Authority" do
   user "root"
   command "cp -r /usr/share/easy-rsa/ /etc/openvpn"
