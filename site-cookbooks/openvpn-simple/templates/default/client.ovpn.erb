@@ -27,13 +27,11 @@ comp-lzo
 verb 3
 
 <ca>
-(insert ca.crt here: /etc/openvpn/ca.crt)
+<%= ::IO.read '/etc/openvpn/ca.crt' %>
 </ca>
 <cert>
-(insert client1.crt here: /etc/openvpn/easy-rsa/keys/client.crt)
-<%= "#{@node['openvpn']['key']['key_dir']}/#{@username}.crt" %>
+<%= ::IO.read "#{@node['openvpn']['key']['key_dir']}/#{@username}.crt" %>
 </cert>
 <key>
-(insert client1.key here: /etc/openvpn/easy-rsa/keys/client.key)
-<%= "#{@node['openvpn']['key']['key_dir']}/#{@username}.key" %>
+<%= ::IO.read "#{@node['openvpn']['key']['key_dir']}/#{@username}.key" %>
 </key>
