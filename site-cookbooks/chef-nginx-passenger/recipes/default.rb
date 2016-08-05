@@ -30,16 +30,57 @@ if node[:nginx][:reconfigure]
   end
 end
 
+directory "/etc/nginx/custom" do
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
 # write site configs from templates
 all_sites do |site|
+  # ensure custom conf
+  file "/etc/nginx/custom/#{site[:server_name]}" do
+    owner "#{ node[:nginx][:run_user] }"
+    group "#{ node[:nginx][:run_user] }"
+    mode '0644'
+    action :create_if_missing
+  end
+
+  if site[:ssl_enabled]
+    directory "/etc/nginx/certs" do
+      owner "root"
+      group "root"
+      mode "0644"
+      action :create
+    end
+
+    file "/etc/nginx/certs/#{site[:server_name]}.crt" do
+      content "#{site[:ssl][:cert]}"
+      owner "root"
+      group "root"
+      mode '0600'
+      action :create
+    end
+
+    file "/etc/nginx/certs/#{site[:server_name]}.key" do
+      content "#{site[:ssl][:key]}"
+      owner "root"
+      group "root"
+      mode '0600'
+      action :create
+    end
+  end
+
   template "/etc/nginx/sites-available/#{site[:server_name]}" do
-    owner "#{ site[:app_user] }"
-    group "#{ site[:app_user] }"
+    owner "#{ node[:nginx][:run_user] }"
+    group "#{ node[:nginx][:run_user] }"
     mode "0644"
     source "ruby.erb"
 
     variables({
       server_name: site[:server_name],
+      ssl_enabled: site[:ssl_enabled],
       app_user: site[:app_user],
       app_name: site[:app_name],
       app_env: site[:app_env] || "production",
