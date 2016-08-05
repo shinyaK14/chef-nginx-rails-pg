@@ -1,6 +1,6 @@
 # Rails Nginx Postgres Server Template
 
-## :sparkles: v1.0.28 :sparkles:
+## v1.0.30
 
 ## Overview
 
@@ -11,12 +11,14 @@ Chef recipes for deploying Rails applications.
 ### Includes
 * basic server provisioning
 * nginx server
+* passenger nginx configuration
 * postgres server
 * rvm/rbenv ruby & gems prerequisites
 * elasticsearch server
 * redis server
 * nodejs server
 * knife-ec2 gem for AWS EC2 creation
+* swap management
 
 ### Getting Started
 
@@ -85,7 +87,5 @@ Chef recipes for deploying Rails applications.
 
 #### TODO
   * add hostname
-  * add swap
   * add monit
   * generate ssh key
-  * add ssh-keyscan for github/bitbucket (for mina)

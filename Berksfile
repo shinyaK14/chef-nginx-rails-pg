@@ -23,3 +23,4 @@ cookbook 'elasticsearch', git: 'git@github.com:dreamsweb/elasticsearch.git'
 
 cookbook 'openssl'
 cookbook 'sysctl'
+cookbook 'swap', '~> 0.3.8'

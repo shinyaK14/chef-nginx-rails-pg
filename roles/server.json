@@ -37,7 +37,8 @@
     // make the server look pretty
     "server-prerequisites",
     // add newrelic server monitoring
-    "chef-newrelic"
+    "chef-newrelic",
+    "lwrp-swap"
   ],
   "chef_type": "role",
   "override_attributes": {

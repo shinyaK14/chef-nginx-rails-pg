@@ -44,6 +44,7 @@ DEPENDENCIES
   sudo
     git: https://github.com/opscode-cookbooks/sudo.git
     revision: d2902b4d6ea6fe2cf175d1921f0cb96b84e089bd
+  swap (~> 0.3.8)
   sysctl
   users (~> 2.0.3)
 
@@ -78,6 +79,7 @@ GRAPH
     ruby_build (>= 0.0.0)
   server-prerequisites (0.0.6)
   sudo (2.5.3)
+  swap (0.3.8)
   sysctl (0.8.0)
     ohai (~> 4.0)
   users (2.0.3)
