@@ -57,8 +57,6 @@ all_sites do |site|
 
     execute "generate the Diffie-Hellman parameters" do
       user "root"
-      group "root"
-      mode '0600'
       command "openssl dhparam -out /etc/nginx/dh2048.pem 2048"
       not_if { ::File.exist?("/etc/nginx/dh2048.pem") }
     end
