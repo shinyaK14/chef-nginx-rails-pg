@@ -104,6 +104,33 @@ all_sites do |site|
   end
 end
 
+if !!node[:ngix][:default_site]
+  template "/etc/nginx/sites-available/default" do
+    owner "#{ node[:nginx][:run_user] }"
+    group "#{ node[:nginx][:run_user] }"
+    mode "0644"
+    source "ruby-default.erb"
+
+    variables({
+      server_name: node[:ngix][:default_site][:server_name],
+      ssl_enabled: node[:ngix][:default_site][:ssl_enabled],
+      app_user: node[:ngix][:default_site][:app_user],
+      app_name: node[:ngix][:default_site][:app_name],
+      app_env: node[:ngix][:default_site][:app_env] || "production",
+      debug_passenger: node[:ngix][:default_site][:debug_passenger] || node[:passenger][:debug_passenger],
+      min_instances: node[:ngix][:default_site][:min_instances] || node[:passenger][:min_instances]
+    })
+
+    notifies :run, "execute[restart-nginx]", :immediately
+  end
+
+  bash "symlink available site if not exist" do
+    user "root"
+    code "ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default"
+    not_if { File.exist?("/etc/nginx/sites-enabled/default") }
+  end
+end
+
 # open web ports
 if node[:nginx][:update_ufw_rules]
   bash "allowing nginx traffic through firewall" do
