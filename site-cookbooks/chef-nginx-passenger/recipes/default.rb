@@ -104,7 +104,7 @@ all_sites do |site|
   end
 end
 
-if !!node[:ngix][:default_site]
+if !!node[:nginx][:default_site]
   template "/etc/nginx/sites-available/default" do
     owner "#{ node[:nginx][:run_user] }"
     group "#{ node[:nginx][:run_user] }"
@@ -112,13 +112,13 @@ if !!node[:ngix][:default_site]
     source "ruby-default.erb"
 
     variables({
-      server_name: node[:ngix][:default_site][:server_name],
-      ssl_enabled: node[:ngix][:default_site][:ssl_enabled],
-      app_user: node[:ngix][:default_site][:app_user],
-      app_name: node[:ngix][:default_site][:app_name],
-      app_env: node[:ngix][:default_site][:app_env] || "production",
-      debug_passenger: node[:ngix][:default_site][:debug_passenger] || node[:passenger][:debug_passenger],
-      min_instances: node[:ngix][:default_site][:min_instances] || node[:passenger][:min_instances]
+      server_name: node[:nginx][:default_site][:server_name],
+      ssl_enabled: node[:nginx][:default_site][:ssl_enabled],
+      app_user: node[:nginx][:default_site][:app_user],
+      app_name: node[:nginx][:default_site][:app_name],
+      app_env: node[:nginx][:default_site][:app_env] || "production",
+      debug_passenger: node[:nginx][:default_site][:debug_passenger] || node[:passenger][:debug_passenger],
+      min_instances: node[:nginx][:default_site][:min_instances] || node[:passenger][:min_instances]
     })
 
     notifies :run, "execute[restart-nginx]", :immediately

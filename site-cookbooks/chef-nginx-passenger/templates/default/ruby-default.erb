@@ -15,9 +15,6 @@ server {
   ssl_certificate /etc/nginx/certs/<%= @server_name %>.crt;
   ssl_certificate_key /etc/nginx/certs/<%= @server_name %>.key;
 
-  ssl_certificate /etc/nginx/certs/pr4.getgrover.com.crt;
-  ssl_certificate_key /etc/nginx/certs/pr4.getgrover.com.key;
-
   ssl_dhparam /etc/nginx/dh2048.pem;
 
   keepalive_timeout 5;
