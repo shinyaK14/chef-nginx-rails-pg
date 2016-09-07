@@ -4,7 +4,7 @@ maintainer_email "info@dwwd.ru"
 description      "Installs/Configures PhantomJs"
 version          "0.0.1"
 
-recipe "dev-mysql", "Installs/Configures PhantomJs"
+recipe "phantomjs", "Installs/Configures PhantomJs"
 
 supports "ubuntu"
 
