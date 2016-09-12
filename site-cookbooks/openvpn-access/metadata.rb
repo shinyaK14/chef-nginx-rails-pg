@@ -9,4 +9,3 @@ recipe "openvpn-access", "Installs/Configures OpenVPN access server"
 supports 'ubuntu', '>= 14.04'
 
 depends 'apt'
-# depends 'sysctl'
