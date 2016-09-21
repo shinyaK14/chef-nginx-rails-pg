@@ -19,7 +19,7 @@ DEPENDENCIES
     revision: 4079db540b9b2b00fb383cba8c30f24c2c3bfbb4
   elasticsearch
     git: git@github.com:dreamsweb/elasticsearch.git
-    revision: 74fca453ceef8aac89c3a3a7c7e98e6814dbcdb0
+    revision: d52ade2696415a9ef084aee2be6fcfca46c7007c
   locale-gen
     git: git@github.com:danhart/locale-gen.git
     revision: 1eb11640f9733f39c7cf1ec86b778eb1f8748463
@@ -59,7 +59,7 @@ GRAPH
   chef-solo-search (0.5.1)
   chef-sugar (2.4.1)
   compat_resource (12.10.7)
-  elasticsearch (0.0.1)
+  elasticsearch (0.0.2)
     java (>= 0.0.0)
   java (1.29.0)
   locale-gen (0.0.1)
