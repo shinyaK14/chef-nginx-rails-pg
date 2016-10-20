@@ -5,4 +5,6 @@ execute "Adding nodejs source" do
 end
 
 package 'build-essential'
-package 'nodejs'
+package 'nodejs' do
+  action :upgrade
+end
