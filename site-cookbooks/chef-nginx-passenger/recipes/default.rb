@@ -109,7 +109,7 @@ if !!node[:nginx][:default_site]
     owner "#{ node[:nginx][:run_user] }"
     group "#{ node[:nginx][:run_user] }"
     mode "0644"
-    source "ruby-default.erb"
+    source "500_default.erb"
 
     variables({
       server_name: node[:nginx][:default_site][:server_name],

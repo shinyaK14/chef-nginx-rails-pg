@@ -1,0 +1,87 @@
+<% if @ssl_enabled %>
+server {
+  listen 80;
+  listen [::]:80;
+  server_name _;
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl http2 default_server;
+  listen [::]:443 ssl http2 default_server;
+  server_name _;
+
+  root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+
+  root /home/deploy/grover/current/public;
+
+  location ~ \.css$ {}
+  location ~ \.js$ {}
+  location ~ \.gif$ {}
+  location ~ \.svg$ {}
+  location ~ \.ico$ {}
+  location ~ \.eot$ {}
+  location ~ \.woff$ {}
+  location ~ \.ttf$ {}
+
+  location / {
+    rewrite ^(.*)$ /500.html break;
+  }
+
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;
+  ssl_prefer_server_ciphers on;
+
+  ssl_session_timeout 5m;
+  ssl_session_cache shared:SSL:50m;
+  ssl_certificate /etc/nginx/certs/<%= @server_name %>.crt;
+  ssl_certificate_key /etc/nginx/certs/<%= @server_name %>.key;
+
+  ssl_dhparam /etc/nginx/dh2048.pem;
+
+  keepalive_timeout 5;
+
+  access_log  /var/log/nginx/<%= @server_name %>.access.log;
+  error_log  /var/log/nginx/<%= @server_name %>.error.log;
+
+  client_max_body_size 500M;
+
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+  }
+}
+<% else %>
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  server_name _;
+
+  root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+
+  location ~ \.css$ {}
+  location ~ \.js$ {}
+  location ~ \.gif$ {}
+  location ~ \.svg$ {}
+  location ~ \.ico$ {}
+  location ~ \.eot$ {}
+  location ~ \.woff$ {}
+  location ~ \.ttf$ {}
+
+  location / {
+    rewrite ^(.*)$ /500.html break;
+  }
+
+  keepalive_timeout 5;
+
+  access_log  /var/log/nginx/<%= @server_name %>.access.log;
+  error_log  /var/log/nginx/<%= @server_name %>.error.log;
+
+  client_max_body_size 500M;
+
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+  }
+}
+<% end %>
