@@ -10,6 +10,13 @@
           "rubies" : ["2.3.0"]
         }
       ]
+    },
+    "rbenv": {
+      "upgrade": true,
+      "plugins": "ruby-build"
+    },
+    "ruby_build": {
+      "upgrade": true
     }
   },
 
