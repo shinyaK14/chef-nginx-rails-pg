@@ -4,7 +4,7 @@ DEPENDENCIES
     revision: 4d9f91c101588ab5292259fd06c1b50d935b7f73
   chef-basic-security
     git: git@github.com:dreamsweb/chef-basic_security.git
-    revision: 76afc1b884a53f1f1dae45b0c8f1ef21135e5e63
+    revision: 0edf19a2f76ccd042fd6797e69f41c3fc5187371
   chef-newrelic
     git: git@github.com:dreamsweb/chef-newrelic.git
     revision: df24608ad577e445283f8fd0b42157b1a148e4df
@@ -51,7 +51,7 @@ DEPENDENCIES
 GRAPH
   apt (2.6.0)
   build-essential (2.0.1)
-  chef-basic-security (0.0.1)
+  chef-basic-security (0.0.3)
   chef-newrelic (0.0.3)
     apt (>= 0.0.0)
   chef-nginx (0.0.8)
