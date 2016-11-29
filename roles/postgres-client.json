@@ -1,0 +1,11 @@
+{
+  "name": "postgres-client",
+  "description": "Postgres database client",
+  "default_attributes": {},
+  "json_class": "Chef::Role",
+  "run_list": [
+    "postgresql::client",
+    "postgresql::server_dev"
+  ],
+  "chef_type": "role"
+}
