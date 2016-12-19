@@ -37,50 +37,51 @@ directory "/etc/nginx/custom" do
   action :create
 end
 
-# write site configs from templates
-all_sites do |site|
+bash "clear existing enabled sites" do
+  user "root"
+  code "rm /etc/nginx/sites-enabled/*"
+end
+
+static_sites do |site|
+  if site[:ssl_enabled]
+    ssl_conf_for site[:server_name], site[:ssl][:cert], site[:ssl][:key]
+  end
+
+  template "/etc/nginx/sites-available/#{site[:server_name]}" do
+    owner "#{node[:nginx][:run_user]}"
+    group "#{node[:nginx][:run_user]}"
+    mode "0644"
+    source "static.erb"
+
+    variables({
+      server_name: site[:server_name],
+      ssl_enabled: site[:ssl_enabled],
+      app_user: site[:app_user],
+      app_name: site[:app_name]
+    })
+
+    notifies :run, "execute[restart-nginx]", :immediately
+  end
+
+  symlink_site site[:server_name]
+end
+
+passenger_sites do |site|
   # ensure custom conf
   file "/etc/nginx/custom/#{site[:server_name]}" do
-    owner "#{ node[:nginx][:run_user] }"
-    group "#{ node[:nginx][:run_user] }"
+    owner "#{node[:nginx][:run_user]}"
+    group "#{node[:nginx][:run_user]}"
     mode '0644'
     action :create_if_missing
   end
 
   if site[:ssl_enabled]
-    directory "/etc/nginx/certs" do
-      owner "root"
-      group "root"
-      mode "0644"
-      action :create
-    end
-
-    execute "generate the Diffie-Hellman parameters" do
-      user "root"
-      command "openssl dhparam -out /etc/nginx/dh2048.pem 2048"
-      not_if { ::File.exist?("/etc/nginx/dh2048.pem") }
-    end
-
-    file "/etc/nginx/certs/#{site[:server_name]}.crt" do
-      content "#{site[:ssl][:cert]}"
-      owner "root"
-      group "root"
-      mode '0600'
-      action :create
-    end
-
-    file "/etc/nginx/certs/#{site[:server_name]}.key" do
-      content "#{site[:ssl][:key]}"
-      owner "root"
-      group "root"
-      mode '0600'
-      action :create
-    end
+    ssl_conf_for site[:server_name], site[:ssl][:cert], site[:ssl][:key]
   end
 
   template "/etc/nginx/sites-available/#{site[:server_name]}" do
-    owner "#{ node[:nginx][:run_user] }"
-    group "#{ node[:nginx][:run_user] }"
+    owner "#{node[:nginx][:run_user]}"
+    group "#{node[:nginx][:run_user]}"
     mode "0644"
     source "ruby.erb"
 
@@ -97,17 +98,13 @@ all_sites do |site|
     notifies :run, "execute[restart-nginx]", :immediately
   end
 
-  bash "symlink available site if not exist" do
-    user "root"
-    code "ln -s /etc/nginx/sites-available/#{site[:server_name]} /etc/nginx/sites-enabled/#{site[:server_name]}"
-    not_if { File.exist?("/etc/nginx/sites-enabled/#{site[:server_name]}") }
-  end
+  symlink_site site[:server_name]
 end
 
 if !!node[:nginx][:default_site]
   template "/etc/nginx/sites-available/default" do
-    owner "#{ node[:nginx][:run_user] }"
-    group "#{ node[:nginx][:run_user] }"
+    owner "#{node[:nginx][:run_user]}"
+    group "#{node[:nginx][:run_user]}"
     mode "0644"
     source "500_default.erb"
 
@@ -115,20 +112,13 @@ if !!node[:nginx][:default_site]
       server_name: node[:nginx][:default_site][:server_name],
       ssl_enabled: node[:nginx][:default_site][:ssl_enabled],
       app_user: node[:nginx][:default_site][:app_user],
-      app_name: node[:nginx][:default_site][:app_name],
-      app_env: node[:nginx][:default_site][:app_env] || "production",
-      debug_passenger: node[:nginx][:default_site][:debug_passenger] || node[:passenger][:debug_passenger],
-      min_instances: node[:nginx][:default_site][:min_instances] || node[:passenger][:min_instances]
+      app_name: node[:nginx][:default_site][:app_name]
     })
 
     notifies :run, "execute[restart-nginx]", :immediately
   end
 
-  bash "symlink available site if not exist" do
-    user "root"
-    code "ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default"
-    not_if { File.exist?("/etc/nginx/sites-enabled/default") }
-  end
+  symlink_site "default"
 end
 
 # open web ports
