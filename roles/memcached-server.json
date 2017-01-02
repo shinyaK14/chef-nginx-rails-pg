@@ -1,8 +1,8 @@
 {
-   "name": "memcached-server",
-   "description": "Memcached server",
-   "default_attributes": {},
-   "json_class": "Chef::Role",
-   "run_list": [ "memcached-tlq" ],
-   "chef_type": "role"
+  "name": "memcached-server",
+  "description": "Memcached server",
+  "default_attributes": {},
+  "json_class": "Chef::Role",
+  "run_list": [ "memcached-tlq" ],
+  "chef_type": "role"
 }
