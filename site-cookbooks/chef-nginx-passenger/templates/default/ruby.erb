@@ -66,6 +66,13 @@ server {
   location = /50x.html {
     root /home/<%= @app_user %>/<%= @app_name %>/current/public;
   }
+
+  location ~ ^/assets/ {
+    expires 1y;
+    add_header Cache-Control public;
+
+    add_header ETag "";
+  }
 }
 <% else %>
 server {
@@ -100,6 +107,13 @@ server {
   error_page 500 502 503 504 /50x.html;
   location = /50x.html {
     root /home/<%= @app_user %>/<%= @app_name %>/current/public;
+  }
+
+  location ~ ^/assets/ {
+    expires 1y;
+    add_header Cache-Control public;
+
+    add_header ETag "";
   }
 }
 <% end %>
